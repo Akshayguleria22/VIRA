@@ -1,0 +1,284 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  --font-size: 14px;
+  --background: #f7f4f0;
+  --foreground: #2c3e3d;
+  --card: #ffffff;
+  --card-foreground: #2c3e3d;
+  --popover: #ffffff;
+  --popover-foreground: #2c3e3d;
+  --primary: #2d5a5a;
+  --primary-foreground: #ffffff;
+  --secondary: #e8f0f0;
+  --secondary-foreground: #2c3e3d;
+  --muted: #f0ede8;
+  --muted-foreground: #6b7373;
+  --accent: #d67441;
+  --accent-foreground: #ffffff;
+  --destructive: #c53030;
+  --destructive-foreground: #ffffff;
+  --border: #e2ddd5;
+  --input: transparent;
+  --input-background: #faf8f5;
+  --switch-background: #d1cfc8;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #2d5a5a;
+  --chart-1: #2d5a5a;
+  --chart-2: #d67441;
+  --chart-3: #8b9463;
+  --chart-4: #a67b5b;
+  --chart-5: #c53030;
+  --radius: 1rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2c3e3d;
+  --sidebar-primary: #2d5a5a;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f0ede8;
+  --sidebar-accent-foreground: #2c3e3d;
+  --sidebar-border: #e2ddd5;
+  --sidebar-ring: #2d5a5a;
+}
+
+.dark {
+  --background: #1a1f1e;
+  --foreground: #f7f4f0;
+  --card: #2c3e3d;
+  --card-foreground: #f7f4f0;
+  --popover: #2c3e3d;
+  --popover-foreground: #f7f4f0;
+  --primary: #4a8080;
+  --primary-foreground: #ffffff;
+  --secondary: #2c3e3d;
+  --secondary-foreground: #f7f4f0;
+  --muted: #3d4f4e;
+  --muted-foreground: #9ca5a4;
+  --accent: #e68c5a;
+  --accent-foreground: #1a1f1e;
+  --destructive: #e53e3e;
+  --destructive-foreground: #f7f4f0;
+  --border: #3d4f4e;
+  --input: #3d4f4e;
+  --ring: #4a8080;
+  --chart-1: #4a8080;
+  --chart-2: #e68c5a;
+  --chart-3: #a3b074;
+  --chart-4: #b8926c;
+  --chart-5: #e53e3e;
+  --sidebar: #2c3e3d;
+  --sidebar-foreground: #f7f4f0;
+  --sidebar-primary: #4a8080;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #3d4f4e;
+  --sidebar-accent-foreground: #f7f4f0;
+  --sidebar-border: #3d4f4e;
+  --sidebar-ring: #4a8080;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+/**
+ * Typography with modern fonts for better accessibility
+ */
+
+
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h4 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.375rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h5 {
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    p {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.0625rem;
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    button {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    input {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 2.25rem;
+    }
+    
+    h2 {
+      font-size: 1.875rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* Custom animations and utilities */
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom focus styles for accessibility */
+@layer base {
+  *:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
